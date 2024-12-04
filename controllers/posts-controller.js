@@ -4,7 +4,11 @@ const posts = require("../data/posts-data");
 // CONTROLLERS
 // Index
 const index = (req, res) => {
-    res.json(posts)
+    let filteredPosts = posts;
+    if (req.query.tag) {
+        filteredPosts = posts.filter((curPost) => (curPost.tags.includes(req.query.tag)));
+    }
+    res.json(filteredPosts)
 }
 
 // Show
