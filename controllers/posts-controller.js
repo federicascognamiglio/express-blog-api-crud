@@ -6,14 +6,14 @@ const posts = require("../data/posts-data");
 const index = (req, res) => {
     let filteredPosts = posts;
     if (req.query.tag) {
-        filteredPosts = posts.filter((curPost) => (curPost.tags.includes(req.query.tag)));
+        filteredPosts = posts.filter(curPost => (curPost.tags.includes(req.query.tag.toLowerCase())));
     }
     res.json(filteredPosts)
 }
 
 // Show
 const show = (req, res) => {
-    const getPost = posts.find((curPost) => curPost.id === parseInt(req.params.id));
+    const getPost = posts.find(curPost => curPost.id === parseInt(req.params.id));
     if (getPost === undefined) {
         res.status(404);
         res.json({
@@ -44,7 +44,7 @@ const modify = (req, res) => {
 
 // Destroy
 const destroy = (req, res) => {
-    const getIndex = posts.findIndex((curPost) => curPost.id === parseInt(req.params.id));
+    const getIndex = posts.findIndex(curPost => curPost.id === parseInt(req.params.id));
     if (getIndex === -1) {
         res.status(404);
         res.json({
