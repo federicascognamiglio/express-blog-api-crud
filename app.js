@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 
 // ROUTER
-const postsRouter = require("./routers/posts");
+const postsRouter = require("./routers/posts-router");
 app.use("/posts", postsRouter);
 
 // app.get("/", (req, res) => {

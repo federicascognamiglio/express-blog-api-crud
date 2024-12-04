@@ -4,7 +4,7 @@ const posts = require("../data/posts-data");
 // CONTROLLERS
 // Index
 const index = (req, res) => {
-    res.json({posts, total: posts.length})
+    res.json(posts)
 }
 
 // Show

@@ -17,7 +17,7 @@ router.post("/", postsController.create)
 router.put("/:id", postsController.update)
 
 // Router "modify"
-router.patch("/:id", )
+router.patch("/:id", postsController.modify)
 
 // Router "destroy"
 router.delete("/:id", postsController.destroy)
