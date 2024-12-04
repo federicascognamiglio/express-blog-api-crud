@@ -1,42 +1,26 @@
-// IMPORTED DATA
+// IMPORTS
 const express = require("express");
 const router = express.Router();
-const posts = require("../data/posts-data");
+const postsController = require("../controllers/posts-controller")
 
 // ROUTERS
 // Router "index"
-router.get("/", (req, res) => {
-    res.json({posts, total: posts.length})
-})
+router.get("/", postsController.index)
 
 // Router "show"
-router.get("/:id", (req, res) => {
-    const postId = parseInt(req.params.id);    
-    const getPost = posts.find((curPost) => curPost.id === postId);
-    res.json(getPost)
-})
+router.get("/:id", postsController.show)
 
 // Router "create"
-router.post("/", (req, res) => {
-    res.send("Creo un nuovo post")
-})
+router.post("/", postsController.create)
 
 // Router "update"
-router.put("/:id", (req, res) => {
-    const postId = req.params.id;
-    res.send("Aggiorno tutti i dati del post con id " + postId)
-})
+router.put("/:id", postsController.update)
 
 // Router "modify"
-router.patch("/:id", (req, res) => {
-    const postId = req.params.id;
-    res.send("Aggiorno solo i dati modificati del post con id " + postId)
-})
+router.patch("/:id", )
 
 // Router "destroy"
-router.delete("/:id", (req, res) => {
-    const postId = req.params.id;
-    res.send("Elimino il post con id " + postId)
-})
+router.delete("/:id", postsController.destroy)
 
+//EXPORTS
 module.exports = router;
