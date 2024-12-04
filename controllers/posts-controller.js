@@ -9,9 +9,16 @@ const index = (req, res) => {
 
 // Show
 const show = (req, res) => {
-    const postId = parseInt(req.params.id);    
-    const getPost = posts.find((curPost) => curPost.id === postId);
-    res.json(getPost)
+    const getPost = posts.find((curPost) => curPost.id === parseInt(req.params.id));
+    if (getPost === undefined) {
+        res.status(404);
+        res.json({
+            error: true,
+            message: "Post not found"
+        })
+    } else {
+        res.json(getPost)
+    }
 }
 
 // Create
@@ -33,8 +40,18 @@ const modify = (req, res) => {
 
 // Destroy
 const destroy = (req, res) => {
-    const postId = req.params.id;
-    res.send("Elimino il post con id " + postId)
+    const getIndex = posts.findIndex((curPost) => curPost.id === parseInt(req.params.id));
+    if (getIndex === -1) {
+        res.status(404);
+        res.json({
+            error: true,
+            message: "Post not found"
+        })
+    } else {
+        posts.splice(getIndex, 1);
+        console.log(posts);
+        res.sendStatus(204);
+    }
 }
 
 // EXPORT
