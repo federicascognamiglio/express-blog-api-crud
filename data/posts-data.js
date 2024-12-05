@@ -44,4 +44,12 @@ const posts = [
 //     "tags": ["natale", "homemade", "semplice"]
 // }
 
+// Updated Post
+// {
+//     "title": "Pane fritto salato",
+//     "content": "Pane fritto salato. Perfetto per una merenda nostalgica o uno snack semplice ma pieno di gusto.",
+//     "img": "images/pane_fritto_salato.jpeg",
+//     "tags": ["snack", "homemade", "semplice"]
+// }
+
 module.exports = posts;

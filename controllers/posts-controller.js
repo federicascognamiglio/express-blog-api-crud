@@ -36,8 +36,20 @@ const store = (req, res) => {
 
 // Update
 const update = (req, res) => {
-    const postId = req.params.id;
-    res.send("Aggiorno tutti i dati del post con id " + postId)
+    const postId = parseInt(req.params.id);
+    const updatedPost = req.body;
+    if (postId === undefined) {
+        res.sendStatus = 404;
+        res.json({
+            error: true,
+            message: "Post not Found"
+        })
+    } else {
+        updatedPost.id = postId;
+        const postToUpdateIndex = posts.findIndex(curPost => curPost.id === postId);
+        posts[postToUpdateIndex] = updatedPost
+        res.json(posts);
+    }
 }
 
 // Modify
