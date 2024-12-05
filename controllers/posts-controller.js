@@ -25,8 +25,9 @@ const show = (req, res) => {
     }
 }
 
-// Create
-const create = (req, res) => {
+// Store
+const store = (req, res) => {
+    console.log(req.body);
     res.send("Creo un nuovo post")
 }
 
@@ -62,7 +63,7 @@ const destroy = (req, res) => {
 module.exports = {
     index,
     show,
-    create,
+    store,
     update,
     modify,
     destroy

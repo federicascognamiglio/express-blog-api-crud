@@ -36,4 +36,12 @@ const posts = [
     }
 ];
 
+// Post to add 
+// {
+//     "title": "Biscotti natalizi",
+//     "content": "Biscotti natalizi. Perfetti per coinvolgere anche i più piccoli, buoni e semplici da realizzare.",
+//     "img": "images/biscotti-natalizi.jpeg",
+//     "tags": ["natale", "homemade", "semplice"]
+// }
+
 module.exports = posts;

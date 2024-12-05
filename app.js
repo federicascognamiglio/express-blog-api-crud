@@ -3,6 +3,9 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+// BODY PARSER
+app.use(express.json());
+
 // ROUTER
 const postsRouter = require("./routers/posts-router");
 app.use("/posts", postsRouter);

@@ -10,8 +10,8 @@ router.get("/", postsController.index)
 // Router "show"
 router.get("/:id", postsController.show)
 
-// Router "create"
-router.post("/", postsController.create)
+// Router "store"
+router.post("/", postsController.store)
 
 // Router "update"
 router.put("/:id", postsController.update)
