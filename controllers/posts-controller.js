@@ -27,18 +27,21 @@ const show = (req, res) => {
 
 // Store
 const store = (req, res) => {
-   const newPost = req.body;
-   const lastId = (posts[posts.length -1]).id;
-   newPost.id = lastId + 1;
-   posts.push(newPost);
-   res.json(posts);
+    const newPostData = req.body;
+    const lastId = (posts[posts.length - 1]).id;
+    const newPost = {
+        id: lastId + 1,
+        ...newPostData
+    };
+    posts.push(newPost);
+    res.json(posts);
 }
 
 // Update
 const update = (req, res) => {
     const postId = parseInt(req.params.id);
     const getIndexToUpdate = posts.findIndex(curPost => curPost.id === postId);
-    const updatedPost = req.body;
+    const newPostData = req.body;
     if (getIndexToUpdate === -1) {
         res.status(404);
         res.json({
@@ -46,7 +49,10 @@ const update = (req, res) => {
             message: "Post not Found"
         })
     } else {
-        updatedPost.id = postId;
+        const updatedPost = {
+            id: postId,
+            ...newPostData
+        };
         posts[getIndexToUpdate] = updatedPost;
         res.json(posts);
     }
