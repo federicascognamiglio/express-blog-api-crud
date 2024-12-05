@@ -21,14 +21,14 @@ const posts = [
         tags: ["dolci", "homemade", "semplice"]
     },
     {
-        id: 3,
+        id: 4,
         title: "Pasta alla barbabietola",
         content: "Pasta alla barbabietola. Perfetta per sorprendere gli ospiti o rendere speciale un pranzo in famiglia.",
         img: "images/pasta_barbabietola.jpeg",
         tags: ["homemade", "barbabietola", "creativo"]
     },
     {
-        id: 4,
+        id: 5,
         title: "Torta paesana",
         content: "Torta paesana. Perfetta per chi cerca sapori genuini e vuole riscoprire un pezzo di cultura.",
         img: "images/torta_paesana.jpeg",
