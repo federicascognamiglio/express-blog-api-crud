@@ -4,8 +4,6 @@ const router = express.Router();
 const postsController = require("../controllers/posts-controller");
 const checkPostExists = require("../middlewares/checkPostExists");
 
-router.use(checkPostExists);
-
 // ROUTERS
 // Router "index"
 router.get("/", postsController.index)
