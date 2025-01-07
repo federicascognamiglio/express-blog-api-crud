@@ -8,6 +8,9 @@ const errorHandler = require("./middlewares/handleErrors");
 // BODY PARSER
 app.use(express.json());
 
+// Middleware per asset statici
+app.use(express.static('public'));
+
 // CORS
 app.use(cors({
    origin: "http://localhost:5173"
