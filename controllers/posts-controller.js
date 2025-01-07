@@ -33,7 +33,7 @@ const store = (req, res) => {
 const update = (req, res) => {
     const getIndexToUpdate = posts.findIndex(curPost => curPost.id === parseInt(req.params.id));
     const updatedPost = {
-        id: postId,
+        id: req.params.id,
         ...req.body
     };
     posts[getIndexToUpdate] = updatedPost;
