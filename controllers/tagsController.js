@@ -14,7 +14,8 @@ const index = (req, res) => {
     }
 
     res.json({
-        tags
+        tags,
+        tot: tags.length
     })
 }
 
