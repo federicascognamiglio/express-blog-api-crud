@@ -2,7 +2,7 @@ const posts = [
     {
         id: 1,
         title: "Ciambellone",
-        content: "Ciambellone soffice e profumato. Perfetto da inzuppare nel latte o accompagnare con un caffè",
+        content: "Ciambellone soffice e profumato. Perfetto da inzuppare nel latte o accompagnare con un caffè.",
         img: "images/ciambellone.jpeg",
         tags: ["dolci", "homemade", "semplice"]
     },

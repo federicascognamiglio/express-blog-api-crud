@@ -20,6 +20,9 @@ app.use(cors({
 const postsRouter = require("./routers/posts-router");
 app.use("/posts", postsRouter);
 
+const tagsRouter = require("./routers/tagsRouter");
+app.use("/tags", tagsRouter)
+
 // app.get("/", (req, res) => {
 //     res.send("Hello Routers!")
 // })
