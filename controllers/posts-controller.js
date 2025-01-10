@@ -26,7 +26,7 @@ const store = (req, res) => {
         ...req.body
     };
     posts.push(newPost);
-    res.json(posts);
+    res.json({posts, newPost});
 }
 
 // Update
